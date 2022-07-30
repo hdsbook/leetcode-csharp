@@ -4,18 +4,21 @@ using NUnit.Framework;
 namespace LeetcodeCsharp;
 
 /// <summary>
-/// @see https://leetcode.com/problems/two-sum/
+/// 1. Two Sum
 /// </summary>
+/// <remarks>https://leetcode.com/problems/two-sum/</remarks>
 [Category("Easy")]
 public class TwoSumTests
 {
     [TestCase(new int[] {2, 7, 11, 15}, 9, new int[] {0, 1})]
     [TestCase(new int[] {3, 2, 4}, 6, new int[] {1, 2})]
     [TestCase(new int[] {3, 3}, 6, new int[] {0, 1})]
-    public void Test1(int[] nums, int target, int[] expected)
+    public void Solution_Returns_Correctly(int[] nums, int target, int[] expected)
     {
+        // when get two sum
         var actual = new Solution().TwoSum(nums, target);
 
+        // then assert
         Assert.AreEqual(expected, actual);
     }
 
