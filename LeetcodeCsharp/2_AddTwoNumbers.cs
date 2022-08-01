@@ -21,7 +21,6 @@ public class AddTwoNumbersTests
         var list2 = Solution.CreateListNode(arr2);
         var expected = Solution.CreateListNode(expectedArr);
 
-
         // when add two numbers
         var actual = new Solution().AddTwoNumbers(list1, list2);
 
