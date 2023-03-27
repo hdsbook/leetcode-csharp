@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using FluentAssertions;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
@@ -24,8 +25,8 @@ public class StringToIntegerAtoiTests
         // when
         var actual = new Solution().MyAtoi(s);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().Be(expected);
     }
     
     [TestCase("42", 42)]

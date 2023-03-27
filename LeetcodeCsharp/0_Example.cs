@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -16,8 +17,8 @@ public class ExampleTests
         // when
         var actual = new Solution().Sum(a, b);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().Be(expected);
     }
 
     public class Solution

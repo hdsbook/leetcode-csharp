@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -27,12 +28,14 @@ public class AddTwoNumbersTests
         // then assert result are same
         while (expected != null || actual != null)
         {
-            Assert.AreEqual(expected.val, actual.val);
+            actual.val.Should().Be(expected.val);
+            
             expected = expected.next;
             actual = actual.next;
         }
-        Assert.Null(expected);
-        Assert.Null(actual);
+        
+        expected.Should().BeNull();
+        actual.Should().BeNull();
     }
 
     public class Solution

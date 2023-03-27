@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -20,8 +21,8 @@ public class PalindromeNumberTests
         // when
         var actual = new Solution().IsPalindrome(x);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().Be(expected);
     }
 
     [TestCase(121, true)]

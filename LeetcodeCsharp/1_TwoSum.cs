@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -18,8 +19,8 @@ public class TwoSumTests
         // when get two sum
         var actual = new Solution().TwoSum(nums, target);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().BeEquivalentTo(expected);
     }
 
     public class Solution

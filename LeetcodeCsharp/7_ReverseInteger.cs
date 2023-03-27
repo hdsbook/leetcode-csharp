@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -19,8 +20,8 @@ public class ReverseIntegerTests
         // when
         var actual = new Solution().Reverse(x);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().Be(expected);
     }
 
     public class Solution

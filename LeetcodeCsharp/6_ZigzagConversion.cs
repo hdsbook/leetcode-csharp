@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace LeetcodeCsharp;
@@ -19,8 +20,8 @@ public class ZigzagConversionTests
         // when
         var actual = new Solution().Convert(s, numRows);
 
-        // then assert
-        Assert.AreEqual(expected, actual);
+        // then
+        actual.Should().Be(expected);
     }
 
     public class Solution
